@@ -35,7 +35,7 @@ export class UsersController {
   @Roles('ADMIN')
   @UseGuards(RolesGuard)
   @Post('/role')
-  addRoles(@Body() dto: AddRoleDto) {
+  addRoles(@Body(new ValidationPipe()) dto: AddRoleDto) {
     return this.userService.addRole(dto);
   }
 
@@ -44,7 +44,7 @@ export class UsersController {
   @Roles('ADMIN')
   @UseGuards(RolesGuard)
   @Post('/ban')
-  ban(@Body() dto: BanUserDto) {
+  ban(@Body(new ValidationPipe()) dto: BanUserDto) {
     return this.userService.ban(dto);
   }
 }
