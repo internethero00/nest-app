@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "62405549-f92c-4642-8834-f2ab8d4e241f",
+		"name": "nest-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45450828",
+		"_collection_link": "https://egor-3487208.postman.co/workspace/egor's-Workspace~74042b53-4e05-4336-836a-0f2870521aeb/collection/45450828-62405549-f92c-4642-8834-f2ab8d4e241f?action=share&source=collection_link&creator=45450828"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVnb3JtaXhBRE1AZ21haWwuY29tIiwiaWQiOjEwLCJyb2xlcyI6W3siaWQiOjEsInZhbHVlIjoiQURNSU4iLCJkZXNjcmlwdGlvbiI6ImZ1bGwgYWNjZXNzIiwiY3JlYXRlZEF0IjoiMjAyNS0wOS0yOVQxOTo1NzozMi44NDdaIiwidXBkYXRlZEF0IjoiMjAyNS0wOS0yOVQxOTo1NzozMi44NDdaIiwiVXNlclJvbGVzIjp7ImlkIjo5LCJyb2xlSWQiOjEsIlVzZXJJZCI6MTB9fV0sImlhdCI6MTc1OTQyOTcxOCwiZXhwIjoxNzU5NTE2MTE4fQ.ERD5fmieO6Y7zmulRMmK9d2Hj0cl--cSmH_sjDGNLdU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"egormix10@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addRole",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVnb3JtaXhBRE1AZ21haWwuY29tIiwiaWQiOjEwLCJyb2xlcyI6W3siaWQiOjEsInZhbHVlIjoiQURNSU4iLCJkZXNjcmlwdGlvbiI6ImZ1bGwgYWNjZXNzIiwiY3JlYXRlZEF0IjoiMjAyNS0wOS0yOVQxOTo1NzozMi44NDdaIiwidXBkYXRlZEF0IjoiMjAyNS0wOS0yOVQxOTo1NzozMi44NDdaIn1dLCJpYXQiOjE3NTk0MjcxMTAsImV4cCI6MTc1OTUxMzUxMH0.SZFJ_DZ-v4ODoPl5xqXq38pe-GRGEnKCaVboHO_-Rhs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\": \"ADMIN\",\r\n    \"userId\": \"9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ban",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVnb3JtaXhBRE1AZ21haWwuY29tIiwiaWQiOjEwLCJyb2xlcyI6W3siaWQiOjEsInZhbHVlIjoiQURNSU4iLCJkZXNjcmlwdGlvbiI6ImZ1bGwgYWNjZXNzIiwiY3JlYXRlZEF0IjoiMjAyNS0wOS0yOVQxOTo1NzozMi44NDdaIiwidXBkYXRlZEF0IjoiMjAyNS0wOS0yOVQxOTo1NzozMi44NDdaIiwiVXNlclJvbGVzIjp7ImlkIjo5LCJyb2xlSWQiOjEsIlVzZXJJZCI6MTB9fV0sImlhdCI6MTc1OTQyOTcxOCwiZXhwIjoxNzU5NTE2MTE4fQ.ERD5fmieO6Y7zmulRMmK9d2Hj0cl--cSmH_sjDGNLdU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"banReason\": \"bad behavior\",\r\n    \"userId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users/ban",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"ban"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "role",
+			"item": [
+				{
+					"name": "createRole",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\": \"USER\",\r\n    \"description\": \"user access\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRoleByValue",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/roles/ADMIN",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"roles",
+								"ADMIN"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"egormix7@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/registration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"egormix7@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "createPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "iphone",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "iphone",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f09981a-875a-4ac0-b21d-54685322935d"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
