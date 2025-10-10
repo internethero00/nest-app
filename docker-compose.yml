@@ -5,7 +5,6 @@ services:
     container_name: main
     build:
       context: .
-      target: dev
     env_file:
       - .development.env
     volumes:
@@ -17,7 +16,7 @@ services:
     command: npm run start:dev
     depends_on:
       - postgres
-    restart: unless-stopped
+    restart: always
 
   postgres:
     container_name: postgres
